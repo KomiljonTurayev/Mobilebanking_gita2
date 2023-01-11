@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="uz.gita.mobilebanking_gita.ui.splash.SplashScreen"
+        tools:layout="@layout/screen_splash"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashScreen_to_termsScreen"
+            app:destination="@id/termsScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_registrationScreen"
+            app:destination="@id/registrationScreen" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_terms"
+        android:id="@+id/termsScreen"
+        android:name="uz.gita.mobilebanking_gita.ui.terms.TermsScreen"
+        android:label="TermsScreen" />
+    <fragment
+        tools:layout="@layout/screen_login"
+        android:id="@+id/loginScreen"
+        android:name="uz.gita.mobilebanking_gita.ui.auth.login.LoginScreen"
+        android:label="LoginScreen" >
+        <action
+            android:id="@+id/action_loginScreen_to_loginVerifyScreen"
+            app:destination="@id/loginVerifyScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_recoveryScreen"
+            app:destination="@id/recoveryScreen" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_login_verify"
+        android:id="@+id/loginVerifyScreen"
+        android:name="uz.gita.mobilebanking_gita.ui.auth.loginverify.LoginVerifyScreen"
+        android:label="LoginVerifyScreen" >
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <argument
+            android:name="where"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_loginVerifyScreen_to_homeScreen"
+            app:destination="@id/homeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationScreen"
+        tools:layout="@layout/screen_regs"
+        android:name="uz.gita.mobilebanking_gita.ui.auth.regs.RegistrationScreen"
+        android:label="RegistrationScreen" >
+        <action
+            android:id="@+id/action_registrationScreen_to_loginVerifyScreen"
+            app:destination="@id/loginVerifyScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.gita.mobilebanking_gita.ui.home.HomeScreen"
+        android:label="HomeScreen" />
+    <fragment
+        android:id="@+id/recoveryScreen"
+        android:name="uz.gita.mobilebanking_gita.ui.auth.recovery.RecoveryScreen"
+        android:label="fragment_recovery_screen"
+        tools:layout="@layout/fragment_recovery_screen" >
+        <action
+            android:id="@+id/action_recoveryScreen_to_loginVerifyScreen"
+            app:destination="@id/loginVerifyScreen" />
+    </fragment>
+</navigation>

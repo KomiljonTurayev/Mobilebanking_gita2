@@ -1,0 +1,46 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:src="@drawable/rounded_rect_gmoji_1" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="6dp"
+        android:src="@drawable/rounded_rect_gmoji_2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_rect_gmoji_3">
+
+        <ImageView
+            android:id="@+id/icon_item_gmoji_imageview"
+            android:layout_width="34dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_gift_gmoji" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="17dp"
+            android:layout_toEndOf="@+id/icon_item_gmoji_imageview"
+            android:text="@string/send_real_gifts"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</FrameLayout>
